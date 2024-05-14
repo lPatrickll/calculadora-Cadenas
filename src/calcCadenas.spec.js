@@ -16,4 +16,12 @@ describe("Calculadora de Cadenas", () => {
     it("deberia mostrar la suma de una cadena de numeros separados por un guion como 1-2 que la suma 3", () => {
         expect(sumarCadenas("1-2")).toEqual(3);
     });
+
+    it("deberia mostrar la suma de una cadena de numeros separados por un guion como 1-2,3 que la suma 6", () => {
+        expect(sumarCadenas("1-2,3")).toEqual(6);
+    });
+
+    it("deberia mostrar la suma de una cadena de numeros separados por un caracter elegido por el usuario como ;", () => {
+        expect(sumarCadenas("//[;] 1;2")).toEqual(3);
+    });
 });
