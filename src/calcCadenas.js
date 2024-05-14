@@ -3,7 +3,7 @@ function sumarCadenas(cadena) {
     if (cadena === "")
         return suma;
     else {
-        const numerosCadena = cadena.split(",");
+        const numerosCadena = cadena.split(/-|,/);
         for (const numero of numerosCadena) {
             suma += parseInt(numero);
         }
