@@ -24,4 +24,12 @@ describe("Calculadora de Cadenas", () => {
     it("deberia mostrar la suma de una cadena de numeros separados por un caracter elegido por el usuario como ;", () => {
         expect(sumarCadenas("//[;] 1;2")).toEqual(3);
     });
+
+    it("deberia mostrar la suma de una cadena de numeros separados por un caracter elegido por el usuario como ;", () => {
+        expect(sumarCadenas("//[;] 1;2-3,4")).toEqual(10);
+    });
+
+    it("deberia mostrar la suma de una cadena de numeros menos si el numero es mayor a 1000", () => {
+        expect(sumarCadenas("2,1003")).toEqual(2);
+    });
 });

@@ -13,7 +13,10 @@ function sumarCadenas(cadena) {
         }
 
         for (const numero of numerosCadena) {
-            suma += parseInt(numero);
+            const numeroParseado = parseInt(numero);
+            if (numeroParseado <= 1000) {
+                suma += numeroParseado;
+            }
         }
         return suma;
     }
