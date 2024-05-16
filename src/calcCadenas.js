@@ -21,9 +21,14 @@ function obtenerNumeros(cadena) {
 }
 
 function filtrarNumerosValidos(numeros) {
+    const mil = 1000;
     return numeros
         .map(numero => parseInt(numero))
-        .filter(numero => !isNaN(numero) && numero <= 1000);
+        .filter(numero => !isNaN(numero) && numeroMenorMil(numero, mil));
+}
+
+function numeroMenorMil(numero, mill) {
+    return numero <= mill;
 }
 
 function calcularSuma(numeros) {
