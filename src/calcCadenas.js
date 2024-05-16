@@ -2,13 +2,12 @@ function sumarCadenas(cadena) {
     let suma = 0;
 
     const numerosCadena = obtenerNumeros(cadena);
+    const numerosValidos = filtrarNumerosValidos(numerosCadena);
 
-    for (const numero of numerosCadena) {
-        const numeroParseado = parseInt(numero);
-        if (numeroParseado <= 1000) {
-            suma += numeroParseado;
-        }
+    for (const numero of numerosValidos) {
+        suma += parseInt(numero);
     }
+
     return suma;
 }
 
@@ -24,6 +23,12 @@ function obtenerNumeros(cadena) {
     } else {
         return cadena.split(/,|-/);
     }
+}
+
+function filtrarNumerosValidos(numeros) {
+    return numeros
+        .map(numero => parseInt(numero))
+        .filter(numero => !isNaN(numero) && numero <= 1000);
 }
 
 export default sumarCadenas;
