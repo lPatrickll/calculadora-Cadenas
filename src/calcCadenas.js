@@ -1,12 +1,7 @@
 function sumarCadenas(cadena) {
-    let suma = 0;
-
     const numerosCadena = obtenerNumeros(cadena);
     const numerosValidos = filtrarNumerosValidos(numerosCadena);
-
-    for (const numero of numerosValidos) {
-        suma += parseInt(numero);
-    }
+    const suma = calcularSuma(numerosValidos);
 
     return suma;
 }
@@ -29,6 +24,10 @@ function filtrarNumerosValidos(numeros) {
     return numeros
         .map(numero => parseInt(numero))
         .filter(numero => !isNaN(numero) && numero <= 1000);
+}
+
+function calcularSuma(numeros) {
+    return numeros.reduce((acumulador, numero) => acumulador + numero, 0);
 }
 
 export default sumarCadenas;
